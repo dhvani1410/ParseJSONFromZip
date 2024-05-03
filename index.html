@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Generate Excel</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                width: 360px;
+                margin: auto;
+                margin-top: 50px;
+            }
+            h2 {
+                margin-bottom: 25px;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+            .input-group {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 25px;
+            }
+            .input-group label {
+                margin-bottom: 8px;
+            }
+            textarea {
+                resize: vertical;
+                min-height: 150px;
+            }
+            button {
+                padding: 8px 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Generate Excel</h2>
+        <form
+            id="form"
+            action="/upload"
+            method="post"
+            enctype="multipart/form-data"
+        >
+            <div class="input-group">
+                <label for="file">Select .zip file</label>
+                <input type="file" name="file" accept=".zip" required />
+            </div>
+            <div class="input-group">
+                <label for="excludeFiles">Exclude these files</label>
+                <textarea name="excludeFiles"></textarea>
+            </div>
+            <button id="submit-button" type="submit">
+                Generate and Download Excel
+            </button>
+        </form>
+
+        <script>
+            const form = document.getElementById("form");
+            const submitButton = document.getElementById("submit-button");
+
+            form.addEventListener("submit", () => {
+                submitButton.disabled = true;
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                }, 15000); // adjust timeout
+            });
+        </script>
+    </body>
+</html>

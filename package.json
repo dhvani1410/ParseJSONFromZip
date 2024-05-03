@@ -1,0 +1,16 @@
+{
+    "name": "json-to-excel",
+    "version": "1.0.0",
+    "description": "A web app to populate template excel with given json files data.",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "exceljs": "^4.4.0",
+        "express": "^4.19.2",
+        "express-fileupload": "^1.5.0",
+        "unzipper": "^0.11.3"
+    }
+}
